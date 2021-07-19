@@ -78,14 +78,16 @@ namespace TaxFormHW
 
             decimal dayofyear; //年計算的分母
             decimal taxperyear = GetTaxPerYear(); //取得年繳稅
+            int subtract = to_date.Year - from_date.Year;
 
             if (radioButton2.Checked) //使用者想要自訂日期
             {
                 decimal daycnt;
-                if (from_date.Year == to_date.Year) //處理不足一年
+                if (subtract == 0) //處理不足一年
                 {
                     daycnt = YearCounter(from_date, to_date, 0);//使用者自訂的天數，當天計算
-                    dayofyear = YearCounter(from_date, from_date, 1);//分母
+                    if (DateTime.IsLeapYear(from_date.Year)) dayofyear = 366;
+                    else dayofyear = 365;
 
                     this.lbl_ans.Text += $"使用期間: {from_date.ToString("yyyy-MM-dd")} → {to_date.ToString("yyyy-MM-dd")}" +
                     $"\n計算天數: {daycnt}" +
@@ -96,49 +98,53 @@ namespace TaxFormHW
                 }
                 else //使用者自訂很多年
                 {
-                    decimal[] yearslist = new decimal[YearLister(from_date, to_date).Length];
-                    YearLister(from_date, to_date).CopyTo(yearslist, 0);
-
+                    
                     decimal total = 0;
-                    for (int i = 0; i < yearslist.Length; i++)
+                    for (int i = 0; i < subtract+1; i++)
                     {
                         decimal tax_ans;
                         if (i == 0)//第一條不一定是一整年
                         {
+                            if (DateTime.IsLeapYear(from_date.Year)) dayofyear = 366;
+                            else dayofyear = 365;
                             decimal temp = YearCounter(from_date, new DateTime(from_date.Year + 1, 1, 1), 0);
-                            tax_ans = Math.Truncate(taxperyear * (temp / yearslist[i]));
+                            tax_ans = Math.Truncate(taxperyear * (temp / dayofyear));
                             total += tax_ans;
                             this.lbl_ans.Text += $"使用期間: {from_date.ToString("yyyy-MM-dd")} → {from_date.Year}-12-31" +
                             $"\n計算天數: {temp}" +
                             $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                             $"\n用途: {this.cartype_cbx.Text}" +
-                            $"\n計算公式: {taxperyear} * {temp}/{yearslist[i]} 元" +
+                            $"\n計算公式: {taxperyear} * {temp}/{dayofyear} 元" +
                             $"\n應納稅額: {tax_ans} 元";
                         }
-                        else if (i == (yearslist.Length - 1)) //最後一條
+                        else if (i == (subtract)) //最後一條
                         {
+                            if (DateTime.IsLeapYear(to_date.Year)) dayofyear = 366;
+                            else dayofyear = 365;
                             daycnt = YearCounter(new DateTime(to_date.Year, 1, 1), to_date, 0);//使用者自訂的天數
-                            tax_ans = Math.Truncate(taxperyear * (daycnt / yearslist[i]));
+                            tax_ans = Math.Truncate(taxperyear * (daycnt / dayofyear));
                             total += tax_ans;
                             this.lbl_ans.Text += $"\n\n使用期間: {to_date.Year}-1-1 → {to_date.ToString("yyyy-MM-dd")}" +
                             $"\n計算天數: {daycnt}" +
                             $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                             $"\n用途: {this.cartype_cbx.Text}" +
-                            $"\n計算公式: {taxperyear} * {daycnt}/{yearslist[i]} 元" +
+                            $"\n計算公式: {taxperyear} * {daycnt}/{dayofyear} 元" +
                             $"\n應納稅額: {tax_ans} 元";
                         }
                         else
                         {
+                            if (DateTime.IsLeapYear(from_date.Year + i)) dayofyear = 366;
+                            else dayofyear = 365;
                             total += taxperyear;
                             this.lbl_ans.Text += $"\n\n使用期間: {from_date.Year + i}-1-1 → {from_date.Year + i}-12-31" +
-                            $"\n計算天數: {yearslist[i]}" +
+                            $"\n計算天數: {dayofyear}" +
                             $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                             $"\n用途: {this.cartype_cbx.Text}" +
-                            $"\n計算公式: {taxperyear} * {yearslist[i]}/{yearslist[i]} 元" +
+                            $"\n計算公式: {taxperyear} * {dayofyear}/{dayofyear} 元" +
                             $"\n應納稅額: {taxperyear} 元";
                         }
                     }
-                    if (yearslist.Length > 1) this.lbl_ans.Text += $"\n\n全部應納稅額: 共 {total} 元";
+                    if (subtract > 0) this.lbl_ans.Text += $"\n\n全部應納稅額: 共 {total} 元";
                 }
             }
             else //使用者使用全年度
@@ -207,19 +213,6 @@ namespace TaxFormHW
                     break;
             }
             this.cc_cbx.SelectedIndex = 0;
-        }
-
-        private Array YearSperater(DateTime fromD, DateTime toD)
-        //把年分化為陣列，若陣列長度為一，視為小於一年，供給YearLister()使用，輸出的資料為2012等年份
-        {
-            int years = toD.Year - fromD.Year;
-            if (years < 0) years = 0;
-            int[] yearlist = new int[years+2]; //+2是要算頭跟尾巴日期多出來的部分
-            for (int i = 0; i < years+2; i++)
-            {
-                yearlist[i] = fromD.Year + i;
-            }
-            return yearlist;
         }
 
         private decimal GetTaxPerYear() //獲取年繳稅金
@@ -504,39 +497,6 @@ namespace TaxFormHW
             //電動機車
             //電動貨車/大客車
             #endregion
-        }
-
-        private Array YearLister(DateTime fromD, DateTime toD) //將使用者自訂的年份日數做成列表
-        {
-            //取得年份列表與該年日數列
-            int[] yearlist = new int[YearSperater(fromD, toD).Length];
-            Array.Copy(YearSperater(fromD, toD), 0, yearlist, 0, YearSperater(fromD, toD).Length);
-
-            int truelength = 0; //處理不足一年
-            if (yearlist.Length == 1) truelength = 1;
-            else truelength = yearlist.Length - 1;
-
-            decimal[] daysofyears = new decimal[truelength];
-
-            for (int i = 0; i < yearlist.Length; i++)
-            {
-                int f;
-                if ((i + 1) == yearlist.Length)
-                {
-                    //碰壁時緊急跳出
-                    break;
-                }
-                else
-                {
-                    //正常情況
-                    f = yearlist[i];
-                }
-                //算該年日數
-                daysofyears[i] = YearCounter(new DateTime(f, 1, 1), new DateTime(f, 12, 31), 1);
-            }
-            //daysofyears應儲存使用者自訂年份的日數
-
-            return daysofyears;
         }
 
         private decimal YearCounter(DateTime fromD, DateTime toD, int type) //日數計算機，參數0,1
