@@ -149,7 +149,8 @@ namespace TaxFormHW
             }
             else //使用者使用全年度
             {
-                dayofyear = YearCounter(DateTime.Now, DateTime.Now, 1);
+                if (DateTime.IsLeapYear(from_date.Year)) dayofyear = 366;
+                else dayofyear = 365;
 
                 this.lbl_ans.Text = $"使用期間: {DateTime.Now.ToString("yyyy")}-01-01 → {DateTime.Now.ToString("yyyy")}-12-31" +
                 $"\n計算天數: {dayofyear}" +
