@@ -45,7 +45,11 @@ namespace TaxFormHW
             this.label2 = new System.Windows.Forms.Label();
             this.cartype_cbx = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // radioButton1
@@ -53,7 +57,7 @@ namespace TaxFormHW
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.radioButton1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.radioButton1.Location = new System.Drawing.Point(12, 12);
+            this.radioButton1.Location = new System.Drawing.Point(12, 21);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(93, 31);
             this.radioButton1.TabIndex = 0;
@@ -67,7 +71,7 @@ namespace TaxFormHW
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.radioButton2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.radioButton2.Location = new System.Drawing.Point(112, 14);
+            this.radioButton2.Location = new System.Drawing.Point(111, 21);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(114, 31);
             this.radioButton2.TabIndex = 1;
@@ -80,7 +84,7 @@ namespace TaxFormHW
             // 
             this.from_dtp.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.from_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.from_dtp.Location = new System.Drawing.Point(232, 14);
+            this.from_dtp.Location = new System.Drawing.Point(231, 21);
             this.from_dtp.Name = "from_dtp";
             this.from_dtp.Size = new System.Drawing.Size(159, 29);
             this.from_dtp.TabIndex = 2;
@@ -90,7 +94,7 @@ namespace TaxFormHW
             // 
             this.to_dtp.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.to_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.to_dtp.Location = new System.Drawing.Point(439, 14);
+            this.to_dtp.Location = new System.Drawing.Point(438, 21);
             this.to_dtp.Name = "to_dtp";
             this.to_dtp.Size = new System.Drawing.Size(159, 29);
             this.to_dtp.TabIndex = 3;
@@ -112,7 +116,7 @@ namespace TaxFormHW
             this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_start.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_start.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_start.Location = new System.Drawing.Point(40, 198);
+            this.btn_start.Location = new System.Drawing.Point(410, 83);
             this.btn_start.Name = "btn_start";
             this.btn_start.Size = new System.Drawing.Size(126, 44);
             this.btn_start.TabIndex = 5;
@@ -124,14 +128,14 @@ namespace TaxFormHW
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.lbl_ans);
-            this.panel1.Location = new System.Drawing.Point(212, 164);
+            this.panel1.Location = new System.Drawing.Point(131, 215);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(322, 180);
             this.panel1.TabIndex = 10;
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(537, 164);
+            this.vScrollBar1.Location = new System.Drawing.Point(456, 215);
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(17, 180);
             this.vScrollBar1.TabIndex = 11;
@@ -143,7 +147,7 @@ namespace TaxFormHW
             this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reset.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_reset.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_reset.Location = new System.Drawing.Point(40, 271);
+            this.btn_reset.Location = new System.Drawing.Point(410, 152);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(126, 44);
             this.btn_reset.TabIndex = 12;
@@ -156,7 +160,7 @@ namespace TaxFormHW
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(402, 13);
+            this.label1.Location = new System.Drawing.Point(401, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 30);
             this.label1.TabIndex = 13;
@@ -167,7 +171,7 @@ namespace TaxFormHW
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label4.Location = new System.Drawing.Point(8, 351);
+            this.label4.Location = new System.Drawing.Point(15, 411);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(322, 24);
             this.label4.TabIndex = 14;
@@ -178,7 +182,7 @@ namespace TaxFormHW
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label5.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label5.Location = new System.Drawing.Point(360, 351);
+            this.label5.Location = new System.Drawing.Point(367, 411);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(231, 24);
             this.label5.TabIndex = 15;
@@ -197,7 +201,7 @@ namespace TaxFormHW
             "601~1200",
             "1201~1800",
             "1801或以上"});
-            this.cc_cbx.Location = new System.Drawing.Point(151, 113);
+            this.cc_cbx.Location = new System.Drawing.Point(145, 76);
             this.cc_cbx.Name = "cc_cbx";
             this.cc_cbx.Size = new System.Drawing.Size(179, 35);
             this.cc_cbx.TabIndex = 9;
@@ -207,7 +211,7 @@ namespace TaxFormHW
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(44, 63);
+            this.label2.Location = new System.Drawing.Point(38, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 30);
             this.label2.TabIndex = 7;
@@ -228,7 +232,7 @@ namespace TaxFormHW
             "營業電動小客車",
             "電動機車",
             "電動貨車/大客車"});
-            this.cartype_cbx.Location = new System.Drawing.Point(151, 58);
+            this.cartype_cbx.Location = new System.Drawing.Point(145, 21);
             this.cartype_cbx.Name = "cartype_cbx";
             this.cartype_cbx.Size = new System.Drawing.Size(179, 35);
             this.cartype_cbx.TabIndex = 6;
@@ -238,39 +242,61 @@ namespace TaxFormHW
             // 
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Location = new System.Drawing.Point(17, 118);
+            this.label3.Location = new System.Drawing.Point(11, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 30);
             this.label3.TabIndex = 8;
             this.label3.Text = "汽缸CC數";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cc_cbx);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cartype_cbx);
+            this.groupBox1.Location = new System.Drawing.Point(12, 69);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(340, 138);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.to_dtp);
+            this.groupBox2.Controls.Add(this.from_dtp);
+            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Location = new System.Drawing.Point(4, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(602, 58);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            // 
             // TaxCnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(610, 384);
+            this.ClientSize = new System.Drawing.Size(610, 441);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.cc_cbx);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cartype_cbx);
             this.Controls.Add(this.btn_start);
-            this.Controls.Add(this.to_dtp);
-            this.Controls.Add(this.from_dtp);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Name = "TaxCnt";
             this.Text = "VehicleTax";
             this.Load += new System.EventHandler(this.TaxCnt_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,6 +320,8 @@ namespace TaxFormHW
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cartype_cbx;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 
