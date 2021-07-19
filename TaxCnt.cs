@@ -87,7 +87,7 @@ namespace TaxFormHW
                     daycnt = YearCounter(from_date, to_date, 0);//使用者自訂的天數，當天計算
                     dayofyear = YearCounter(from_date, from_date, 1);//分母
 
-                    this.lbl_ans.Text += $"\n\n使用期間: {from_date.ToString("yyyy-MM-dd")} → {to_date.ToString("yyyy-MM-dd")}" +
+                    this.lbl_ans.Text += $"使用期間: {from_date.ToString("yyyy-MM-dd")} → {to_date.ToString("yyyy-MM-dd")}" +
                     $"\n計算天數: {daycnt}" +
                     $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                     $"\n用途: {this.cartype_cbx.Text}" +
@@ -108,7 +108,7 @@ namespace TaxFormHW
                             decimal temp = YearCounter(from_date, new DateTime(from_date.Year + 1, 1, 1), 0);
                             tax_ans = Math.Truncate(taxperyear * (temp / yearslist[i]));
                             total += tax_ans;
-                            this.lbl_ans.Text += $"\n\n使用期間: {from_date.ToString("yyyy-MM-dd")} → {from_date.Year}-12-31" +
+                            this.lbl_ans.Text += $"使用期間: {from_date.ToString("yyyy-MM-dd")} → {from_date.Year}-12-31" +
                             $"\n計算天數: {temp}" +
                             $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                             $"\n用途: {this.cartype_cbx.Text}" +
@@ -145,14 +145,14 @@ namespace TaxFormHW
             {
                 dayofyear = YearCounter(DateTime.Now, DateTime.Now, 1);
 
-                this.lbl_ans.Text = $"\n\n使用期間: {DateTime.Now.ToString("yyyy")}-01-01 → {DateTime.Now.ToString("yyyy")}-12-31" +
+                this.lbl_ans.Text = $"使用期間: {DateTime.Now.ToString("yyyy")}-01-01 → {DateTime.Now.ToString("yyyy")}-12-31" +
                 $"\n計算天數: {dayofyear}" +
                 $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                 $"\n用途: {this.cartype_cbx.Text}" +
                 $"\n計算公式: {taxperyear} * {dayofyear}/{dayofyear} 元" +
                 $"\n應納稅額: {taxperyear} 元";
             }
-            this.vScrollBar1.Maximum = this.lbl_ans.Text.Length*2;
+            this.vScrollBar1.Maximum = this.lbl_ans.Text.Length*4/3;
 
         }
 
