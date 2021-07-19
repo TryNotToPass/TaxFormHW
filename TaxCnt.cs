@@ -152,7 +152,7 @@ namespace TaxFormHW
                 $"\n計算公式: {taxperyear} * {dayofyear}/{dayofyear} 元" +
                 $"\n應納稅額: {taxperyear} 元";
             }
-            this.vScrollBar1.Maximum = this.lbl_ans.Text.Length*4/3;
+            this.vScrollBar1.Maximum = this.lbl_ans.Text.Length*5/3;
 
         }
 
