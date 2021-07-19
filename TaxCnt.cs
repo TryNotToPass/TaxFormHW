@@ -29,7 +29,6 @@ namespace TaxFormHW
             this.vScrollBar1.Maximum = this.lbl_ans.Text.Length;
             this.lbl_ans.Location = this._startPoint;
             this.lbl_ans.Text = String.Empty;
-
         }
 
         private void TaxCnt_Load(object sender, EventArgs e)

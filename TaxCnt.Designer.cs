@@ -47,6 +47,7 @@ namespace TaxFormHW
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -55,11 +56,11 @@ namespace TaxFormHW
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.radioButton1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.radioButton1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.radioButton1.Location = new System.Drawing.Point(12, 21);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(93, 31);
+            this.radioButton1.Size = new System.Drawing.Size(93, 30);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "全年度";
@@ -69,11 +70,11 @@ namespace TaxFormHW
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.radioButton2.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.radioButton2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.radioButton2.Location = new System.Drawing.Point(111, 21);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(114, 31);
+            this.radioButton2.Size = new System.Drawing.Size(114, 30);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "自選期間";
@@ -114,7 +115,7 @@ namespace TaxFormHW
             // 
             this.btn_start.BackColor = System.Drawing.Color.DimGray;
             this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_start.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_start.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_start.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btn_start.Location = new System.Drawing.Point(410, 83);
             this.btn_start.Name = "btn_start";
@@ -145,7 +146,7 @@ namespace TaxFormHW
             // 
             this.btn_reset.BackColor = System.Drawing.Color.DimGray;
             this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reset.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_reset.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_reset.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btn_reset.Location = new System.Drawing.Point(410, 152);
             this.btn_reset.Name = "btn_reset";
@@ -209,11 +210,11 @@ namespace TaxFormHW
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label2.Location = new System.Drawing.Point(38, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 30);
+            this.label2.Size = new System.Drawing.Size(62, 31);
             this.label2.TabIndex = 7;
             this.label2.Text = "用途";
             // 
@@ -240,7 +241,7 @@ namespace TaxFormHW
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label3.Location = new System.Drawing.Point(11, 81);
             this.label3.Name = "label3";
@@ -274,12 +275,23 @@ namespace TaxFormHW
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label6.Location = new System.Drawing.Point(102, 215);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 180);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "稅金總額結果顯示";
+            // 
             // TaxCnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(610, 441);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
@@ -322,6 +334,7 @@ namespace TaxFormHW
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label6;
     }
 }
 
