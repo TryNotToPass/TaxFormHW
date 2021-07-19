@@ -508,7 +508,6 @@ namespace TaxFormHW
 
         private Array YearLister(DateTime fromD, DateTime toD) //將使用者自訂的年份日數做成列表
         {
-
             //取得年份列表與該年日數列
             int[] yearlist = new int[YearSperater(fromD, toD).Length];
             Array.Copy(YearSperater(fromD, toD), 0, yearlist, 0, YearSperater(fromD, toD).Length);

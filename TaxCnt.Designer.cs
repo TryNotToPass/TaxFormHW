@@ -258,7 +258,7 @@ namespace TaxFormHW
             this.groupBox1.Controls.Add(this.cartype_cbx);
             this.groupBox1.Location = new System.Drawing.Point(12, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 138);
+            this.groupBox1.Size = new System.Drawing.Size(340, 127);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             // 
