@@ -93,7 +93,7 @@ namespace TaxFormHW
                     $"\n計算天數: {daycnt}" +
                     $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                     $"\n用途: {this.cartype_cbx.Text}" +
-                    $"\n計算公式: {taxperyear} * {daycnt}/{dayofyear} 元" +
+                    $"\n計算公式: {taxperyear} * {daycnt}/{dayofyear}" +
                     $"\n應納稅額: {Math.Truncate(taxperyear * (daycnt / dayofyear))} 元";
                 }
                 else //使用者自訂很多年
@@ -114,7 +114,7 @@ namespace TaxFormHW
                             $"\n計算天數: {temp}" +
                             $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                             $"\n用途: {this.cartype_cbx.Text}" +
-                            $"\n計算公式: {taxperyear} * {temp}/{dayofyear} 元" +
+                            $"\n計算公式: {taxperyear} * {temp}/{dayofyear}" +
                             $"\n應納稅額: {tax_ans} 元";
                         }
                         else if (i == (subtract)) //最後一條
@@ -128,7 +128,7 @@ namespace TaxFormHW
                             $"\n計算天數: {daycnt}" +
                             $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                             $"\n用途: {this.cartype_cbx.Text}" +
-                            $"\n計算公式: {taxperyear} * {daycnt}/{dayofyear} 元" +
+                            $"\n計算公式: {taxperyear} * {daycnt}/{dayofyear}" +
                             $"\n應納稅額: {tax_ans} 元";
                         }
                         else
@@ -140,7 +140,7 @@ namespace TaxFormHW
                             $"\n計算天數: {dayofyear}" +
                             $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                             $"\n用途: {this.cartype_cbx.Text}" +
-                            $"\n計算公式: {taxperyear} * {dayofyear}/{dayofyear} 元" +
+                            $"\n計算公式: {taxperyear} * {dayofyear}/{dayofyear}" +
                             $"\n應納稅額: {taxperyear} 元";
                         }
                     }
@@ -156,7 +156,7 @@ namespace TaxFormHW
                 $"\n計算天數: {dayofyear}" +
                 $"\n汽缸CC數/馬力: {this.cc_cbx.Text}" +
                 $"\n用途: {this.cartype_cbx.Text}" +
-                $"\n計算公式: {taxperyear} * {dayofyear}/{dayofyear} 元" +
+                $"\n計算公式: {taxperyear} * {dayofyear}/{dayofyear}" +
                 $"\n應納稅額: {taxperyear} 元";
             }
             this.vScrollBar1.Maximum = this.lbl_ans.Text.Length*5/3;
